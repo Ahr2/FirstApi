@@ -25,8 +25,7 @@ public class cartcontroller {
         return cartService.getallproducts();
         
     }
-
-
+    
     @PostMapping("/addproduct/{id}")
     public ResponseEntity<String> addproduct(@PathVariable int id, @RequestBody Cart cart){
         cartService.addproduct(cart);

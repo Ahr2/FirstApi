@@ -1,14 +1,22 @@
-# 1️⃣ Use Java 21 (matches your JDK)
-FROM eclipse-temurin:21-jre
+# ---------- BUILD STAGE ----------
+FROM maven:3.9.9-eclipse-temurin-21 AS builder
 
-# 2️⃣ Set working directory
 WORKDIR /app
 
-# 3️⃣ Copy jar file
-COPY target/FirstApi-0.0.1-SNAPSHOT.jar app.jar
+COPY pom.xml .
+RUN mvn dependency:go-offline
 
-# 4️⃣ Expose application port
-EXPOSE 8081
+COPY src ./src
+RUN mvn clean package -DskipTests
 
-# 5️⃣ Run the application
+
+# ---------- RUN STAGE ----------
+FROM eclipse-temurin:21-jre-jammy
+
+WORKDIR /app
+
+COPY --from=builder /app/target/*.jar app.jar
+
+EXPOSE 8080
+
 ENTRYPOINT ["java", "-jar", "app.jar"]

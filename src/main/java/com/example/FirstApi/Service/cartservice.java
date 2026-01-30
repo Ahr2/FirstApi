@@ -17,9 +17,18 @@ public class cartservice {
     public List<Cart> getallproducts(){
         return cartRepo.findAll();
     }
-
     public String addproduct(Cart cart){
         cartRepo.save(cart);
         return "Product created successfully";
     }
+
+    public void updateproduct(Cart cart) {
+
+    Cart existing = cartRepo.findById(cart.getId())
+        .orElseThrow(() -> new RuntimeException("Product not found"));
+
+    existing.setName(cart.getName());
+    existing.setAge(cart.getAge());
+    cartRepo.save(existing);
+   }
 }

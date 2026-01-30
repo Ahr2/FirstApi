@@ -12,12 +12,12 @@ public class Cart {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    private int id1;
-    public int getId1() {
-        return id1;
+    
+    public Integer getId() {
+        return id;
     }
-    public void setId1(int id1) {
-        this.id1 = id1;
+    public void setId(Integer id) {
+        this.id = id;
     }
     private String name;
     private int age;
@@ -35,6 +35,4 @@ public class Cart {
     public void setAge(int age) {
         this.age = age;
     }
-
-    
 }

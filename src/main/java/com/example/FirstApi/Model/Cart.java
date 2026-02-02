@@ -1,4 +1,4 @@
-package com.example.FirstApi.Model;
+package com.example.firstapi.Model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -12,7 +12,7 @@ public class Cart {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    
+   public Cart(){}
     public Integer getId() {
         return id;
     }

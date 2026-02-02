@@ -1,4 +1,4 @@
-package com.example.FirstApi.Controller;
+package com.example.firstapi.Controller;
 
 import java.util.List;
 
@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.FirstApi.Model.Cart;
-import com.example.FirstApi.Service.cartservice;
+import com.example.firstapi.Model.Cart;
+import com.example.firstapi.Service.cartservice;
 
 @RestController
 public class cartcontroller {

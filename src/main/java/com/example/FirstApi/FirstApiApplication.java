@@ -1,4 +1,4 @@
-package com.example.FirstApi;
+package com.example.firstapi;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

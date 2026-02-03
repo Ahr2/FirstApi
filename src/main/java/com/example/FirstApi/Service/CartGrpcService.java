@@ -31,6 +31,10 @@ public class CartGrpcService
         cart.setName(request.getName());
         cart.setAge(request.getAge());
 
+        if (request.getId() <= 0) {
+            throw new IllegalArgumentException("Invalid Cart ID");
+        }
+
         // Save ONE entity
         cartRepo.save(cart);
 

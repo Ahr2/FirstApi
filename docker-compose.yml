@@ -1,0 +1,27 @@
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: mysql-db
+    environment:
+      MYSQL_ROOT_PASSWORD: "Hem@123456"
+      MYSQL_DATABASE: School
+    ports:
+      - "3306:3306"
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-pHem@123456"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  app:
+    image: app:latest
+    container_name: firstapi-app
+    ports:
+      - "8080:8080"
+    depends_on:
+      mysql:
+        condition: service_healthy
+    environment:
+      DB_URL: "jdbc:mysql://mysql:3306/School?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC"
+      DB_USERNAME: "root"
+      DB_PASSWORD: "Hem@123456"

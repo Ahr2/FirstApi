@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 name: CI Pipeline
 
 on:
@@ -25,6 +24,3 @@ jobs:
 
       - name: Build with Maven
         run: mvn clean package
-=======
-
->>>>>>> d39e7db43110428d1cb263c2937b3ddfd8b93d46

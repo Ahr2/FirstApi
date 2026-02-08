@@ -38,6 +38,11 @@ public class cartcontroller {
         cartService.updateproduct(cart);
         return ResponseEntity.status(HttpStatus.OK).body("Product update Successfully");
     }
+
+    @GetMapping("/up")
+    public String update(){
+        return "Entry to update product";
+    }
 }
 
 /*

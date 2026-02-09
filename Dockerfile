@@ -1,7 +1,9 @@
 # ================================
 # 1️⃣ Build stage
 # ================================
-FROM maven:3.9.9-eclipse-temurin-21 AS build
+# # Compile version and Runtime version are the same (21) to avoid compatibility issues.
+# Maven tool version is 3.9.9, which is compatible with Java 21 and provides good performance and stability for building the application.
+FROM maven:3.9.9-eclipse-temurin-21 AS build 
 
 WORKDIR /app
 
@@ -16,7 +18,7 @@ COPY src ./src
 RUN mvn clean package -DskipTests
 
 
-# ================================
+# ========================
 # 2️⃣ Runtime stage
 # ================================
 FROM eclipse-temurin:21-jre

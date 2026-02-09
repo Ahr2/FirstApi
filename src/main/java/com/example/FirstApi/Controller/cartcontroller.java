@@ -1,7 +1,6 @@
 package com.example.firstapi.Controller;
 
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -38,6 +37,12 @@ public class cartcontroller {
         cartService.updateproduct(cart);
         return ResponseEntity.status(HttpStatus.OK).body("Product update Successfully");
     }
+
+    @GetMapping("/getproductbyid/{id}")
+    public String getproductbyid(@PathVariable int id){
+        return cartService.getproductbyid(id);
+    }
+
 }
 
 /*

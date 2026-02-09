@@ -31,4 +31,10 @@ public class cartservice {
     existing.setAge(cart.getAge());
     cartRepo.save(existing);
    }
+
+   public String getproductbyid(int id) {
+    Cart cart = cartRepo.findById(id)
+        .orElseThrow(() -> new RuntimeException("Product not found"));
+        return "Product found: " + cart.getName();
+   }
 }

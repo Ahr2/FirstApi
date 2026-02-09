@@ -37,12 +37,6 @@ public class cartcontroller {
         cartService.updateproduct(cart);
         return ResponseEntity.status(HttpStatus.OK).body("Product update Successfully");
     }
-
-    @GetMapping("/getproductbyid/{id}")
-    public String getproductbyid(@PathVariable int id){
-        return cartService.getproductbyid(id);
-    }
-
 }
 
 /*

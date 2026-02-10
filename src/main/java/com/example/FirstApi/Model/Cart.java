@@ -1,5 +1,7 @@
 package com.example.firstapi.Model;
 
+import org.antlr.v4.runtime.misc.NotNull;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -20,7 +22,9 @@ public class Cart {
         this.id = id;
     }
     private String name;
-    private int age;
+
+    @NotNull
+    private Integer age;
 
    
     public String getName() {

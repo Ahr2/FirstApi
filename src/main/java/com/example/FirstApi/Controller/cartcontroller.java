@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -36,6 +37,12 @@ public class cartcontroller {
     public ResponseEntity<String> updateproduct( @RequestBody Cart cart){
         cartService.updateproduct(cart);
         return ResponseEntity.status(HttpStatus.OK).body("Product update Successfully");
+    }
+
+    @PatchMapping("/getproductbyid/{id}")
+    public ResponseEntity<String> getproductbyid(@PathVariable int id) {
+        String response = cartService.getproductbyid(id);
+        return ResponseEntity.status(HttpStatus.OK).body(response);
     }
 }
 

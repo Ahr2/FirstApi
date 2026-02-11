@@ -50,5 +50,4 @@ public class cartcontroller {
 DB_URL : jdbc:mysql://yamanote.proxy.rlwy.net:28060/railway
 DB_USERNAME : root
 DB_PASSWORD : yBrWfdbxASwyJNAwakSwRMWlagjMfNUa
-
 */

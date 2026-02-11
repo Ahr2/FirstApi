@@ -37,4 +37,10 @@ public class cartservice {
         .orElseThrow(() -> new RuntimeException("Product not found"));
         return "Product found: " + cart.getName();
    }
+
+   public void deleteproduct(int id) {
+    Cart cart = cartRepo.findById(id)
+        .orElseThrow(() -> new RuntimeException("Product not found"));
+        cartRepo.delete(cart);
+    }
 }

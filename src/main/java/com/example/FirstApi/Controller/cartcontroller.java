@@ -39,11 +39,7 @@ public class cartcontroller {
         return ResponseEntity.status(HttpStatus.OK).body("Product update Successfully");
     }
 
-    @PatchMapping("/getproductbyid/{id}")
-    public ResponseEntity<String> getproductbyid(@PathVariable int id) {
-        String response = cartService.getproductbyid(id);
-        return ResponseEntity.status(HttpStatus.OK).body(response);
-    }
+    
 }
 
 /*

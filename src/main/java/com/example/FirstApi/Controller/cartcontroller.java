@@ -46,11 +46,7 @@ public class cartcontroller {
         return ResponseEntity.status(HttpStatus.OK).body(response);
     }
 
-    @DeleteMapping("/deleteproduct/{id}")
-    public ResponseEntity<String> deleteproduct(@PathVariable int id) {
-        cartService.deleteproduct(id);
-        return ResponseEntity.status(HttpStatus.OK).body("Product deleted successfully");
-    }
+   
 
 }
 
